@@ -1,13 +1,18 @@
-import { Button } from '@/shared/components/button'
+import { MarketOverview } from '@/features/home/components/market-overview'
+import { MarketSummary } from '@/features/home/components/market-summary'
+import { TopByVolume } from '@/features/home/components/top-by-volume'
+import { TopMovers } from '@/features/home/components/top-movers'
 
 export default function Home() {
   return (
-    <section className="flex h-screen items-center justify-center bg-neutral-900 text-white">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Nepse AI</h1>
-        <p className="text-lg">Nepse AI is a Nepali stock market prediction tool.</p>
-        <p className="font-i mt-2 text-lg">Built with Next.js and Tailwind CSS.</p>
-        <Button variant="destructive">Nepse AI</Button>
+    <section className="p-6">
+      <div className="grid grid-cols-5 gap-6">
+        <MarketOverview />
+        <MarketSummary />
+      </div>
+      <div className="mt-6 grid grid-cols-5 gap-6">
+        <TopMovers />
+        <TopByVolume />
       </div>
     </section>
   )
