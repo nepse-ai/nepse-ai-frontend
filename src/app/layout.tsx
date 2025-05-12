@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Inter, Roboto_Mono } from 'next/font/google'
 import './globals.css'
+import QueryClientProvider from '@/shared/providers/query-client-provider'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -27,7 +28,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.variable} ${robotoMono.variable} ${inter.className} antialiased`}>
-        <main>{children}</main>
+        <main>
+          <QueryClientProvider>{children}</QueryClientProvider>
+        </main>
       </body>
     </html>
   )
